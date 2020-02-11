@@ -7,11 +7,10 @@ const hospitalRecords = require('./routes/hospitalrecords');
 
 
 const hostname = "localhost";
-const port = 8000;
+const port = 8080;
 
 //Sample json object
 // {"name":"hospital","address":"hosaddress","pincode":"pincode"};
-
 
 
 var app = express();
@@ -19,6 +18,9 @@ var app = express();
 app.use(bodyParser.json());
 
 app.use('/hospitals',hospitalRecords);
+app.use('/hospitals/:id',hospitalRecords);
+
+
 
 // app.all('/hospitals/:id',(req,res,next)=>{
 // 	res.statusCode = 200;
